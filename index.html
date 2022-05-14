@@ -183,21 +183,21 @@
             <button class="footer-button">previous</button>
             <button class="footer-button">next</button>
         </footer>
-        <div class="modal-bg">
+        <div id="modal-bg" class="modal-bg">
             <div class="modal">
                 <h1 class="title modal-title">Add/Edit article</h1>
                 <div class="form-container">
-                    <input class="modal-form" type="text" placeholder="Please enter title">
-                    <input class="modal-form" type="text" placeholder="Please enter tag">
-                    <input class="modal-form" type="text" placeholder="Please enter author">
-                    <input class="modal-form" type="text" placeholder="Please enter date">
-                    <input class="modal-form url-form" type="text" placeholder="Please enter image url">
+                    <input id="input-title" class="modal-form" type="text" placeholder="Please enter title">
+                    <input id="input-tag" class="modal-form" type="text" placeholder="Please enter tag">
+                    <input id="input-author" class="modal-form" type="text" placeholder="Please enter author">
+                    <input id="input-date" class="modal-form" type="text" placeholder="Please enter date">
+                    <input id="input-url" class="modal-form url-form" type="text" placeholder="Please enter image url">
                     <!-- <input class="modal-form content-form" type="text" placeholder="Please enter content"> -->
-                    <textarea class="modal-form content-form" placeholder="Please enter content"></textarea>
+                    <textarea id="input-content" class="modal-form content-form" placeholder="Please enter content"></textarea>
                 </div>
                 <div class="modal-button-container">
                     <button class="button" id="closeModalBtn">CANCEL</button>
-                    <button class="button bg-pink">SAVE</button>
+                    <button id="saveModalBtn" class="button bg-pink">SAVE</button>
                 </div>
             </div>
         </div>

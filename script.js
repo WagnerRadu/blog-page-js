@@ -45,23 +45,7 @@ function createArticle(article) {
     ulNode.appendChild(liNode3);
 
     articleNode.appendChild(ulNode);
-
-    let editContainer = document.createElement("div");
-    editContainer.setAttribute("class", "edit-container");
-
-    let editBtn = document.createElement("button");
-    editBtn.setAttribute("class", "edit-button");
-    editBtn.textContent = "Edit";
-    let vBar = document.createElement("p");
-    vBar.setAttribute("class", "edit-button");
-    vBar.textContent = "|";
-    let deleteBtn = document.createElement("button");
-    deleteBtn.setAttribute("class", "edit-button");
-    deleteBtn.textContent = "Delete";
-    editContainer.appendChild(editBtn);
-    editContainer.appendChild(vBar);
-    editContainer.appendChild(deleteBtn);
-    articleNode.appendChild(editContainer);
+    addEditContainer(articleNode);
 
     let img = document.createElement("img");
     img.setAttribute("class", "image");
@@ -74,6 +58,32 @@ function createArticle(article) {
     articleNode.appendChild(p);
 
     return articleNode;
+}
+
+function addEditContainer(article) {
+    let editContainer = document.createElement("div");
+    editContainer.setAttribute("class", "edit-container");
+    let editBtn = createEditButton();
+    let vBar = document.createElement("p");
+    vBar.setAttribute("class", "edit-button");
+    vBar.textContent = "|";
+    let deleteBtn = document.createElement("button");
+    deleteBtn.setAttribute("class", "edit-button");
+    deleteBtn.textContent = "Delete";
+    editContainer.appendChild(editBtn);
+    editContainer.appendChild(vBar);
+    editContainer.appendChild(deleteBtn);
+    article.appendChild(editContainer);
+}
+
+function createEditButton() {
+    let editBtn = document.createElement("button");
+    editBtn.setAttribute("class", "edit-button");
+    editBtn.textContent = "Edit";
+    editBtn.addEventListener("click", function() {
+        modalBg.classList.add("modal-active");
+    });
+    return editBtn;
 }
 
 console.log("ok");
